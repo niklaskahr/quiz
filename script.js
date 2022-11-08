@@ -75,7 +75,7 @@ function init() {
 function showProgress() {
     let progressinPercent = (currentQuestion / questions.length) * 100;
     document.getElementById('progress-bar').style.width = `${progressinPercent}%`;
-    
+
     if (progressinPercent == 100) {
         document.getElementById('progress-bar').style.borderRadius = 0;
     }
@@ -216,4 +216,12 @@ function restart() {
     document.getElementById('endscreen').classList.add('d-none');
 
     init();
+}
+
+
+function share() {
+    let link = 'https://niklas-kahr.developerakademie.net/quiz/';
+    navigator.clipboard.writeText(link);
+
+    alert("Kopiert: " + link);
 }

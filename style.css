@@ -18,13 +18,26 @@ a {
     padding-left: 4rem !important;
 }
 
+.pt-45 {
+    padding-top: 2rem !important;
+}
+
+.mb-55 {
+    margin-bottom: 3.2rem !important;
+}
+
+.mb-35 {
+    margin-bottom: 1.25rem !important;
+}
+
+
 .navbar {
     align-items: flex-start !important;
     min-height: 50vh;
 }
 
 .width {
-    width: 45% !important;
+    width: 35% !important;
 }
 
 .height {
@@ -50,6 +63,15 @@ a {
     background-color: #FEFAEF !important;
 }
 
+.menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.options {
+    font-size: 18px;
+}
+
 .tropy {
     height: 17vh;
     position: absolute;
@@ -71,6 +93,7 @@ a {
 }
 
 .card {
+    justify-content: center;
     background-color: rgb(247, 247, 247) !important;
     /* height: auto !important; */
 }
@@ -92,7 +115,7 @@ a {
 }
 
 .logo {
-    height: 64px;
+    height: 60px;
     object-fit: contain;
 }
 
@@ -138,7 +161,6 @@ a {
 .btn-blue:hover {
     background-color: #3554f1 !important;
     border: 1px solid #3c54be !important;
-
 }
 
 .bg-correct {
@@ -176,6 +198,14 @@ a {
 
 .bold {
     font-weight: bold;
+}
+
+.white {
+    color: white;
+}
+
+.white:hover {
+    color: rgb(218, 218, 218);
 }
 
 .orange {

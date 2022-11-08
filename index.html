@@ -25,25 +25,29 @@
     </div>
     <div class="contentContainer">
         <nav class="navbar bg-color border border-end-0 rounded-start border-color px-4 py-4">
-            <div class="container-fluid">
-                <img class="logo" src="img/logo.png" alt="Logo">
+            <div class="menu container-fluid">
+                <img class="logo mb-5" src="img/logo.png" alt="Logo">
+                <a class="options white mb-35">HTML</a>
+                <a class="options white mb-35">CSS</a>
+                <a class="options white mb-35">JavaScript</a>
+                <a class="options white">Java</a>
             </div>
         </nav>
         <div class="card width height border-start-0 rounded-0 rounded-end border-color">
             <div class="endscreen d-none" id="endscreen">
                 <img class="head mb-2" src="img/head.png" alt="Kopf">
-                <span class="endspan bold mb-1">Quiz beendet</span>
+                <span class="endspan bold mb-1">QUIZ BEENDET</span>
                 <div class="my-4">
-                    <span class="orange bold">Dein Ergebnis</span>
+                    <span class="orange bold">DEIN ERGEBNIS</span>
                     <span id="answered-correctly" class="bold ms-4">x</span><span class="bold">/</span><span
                         class="bold" id="total-questions2">x</span>
                 </div>
-                <button class="btn btn-blue mt-1 ms-2 me-2">Share</button>
-                <a onclick="restart()" class="blue mt-2">Replay</a>
+                <button onclick="share()" class="btn btn-blue mt-1 px-5">SHARE</button>
+                <a onclick="restart()" class="blue mt-2">REPLAY</a>
                 <img id="trophy" class="tropy" src="img/tropy.png" alt="Trophäe">
             </div>
 
-            <div id="question-container" class="card-body border-radius1 px-5 py-4">
+            <div id="question-container" class="card-body border-radius1 px-5 pt-45 pb-4">
                 <h5 id="question-text" class="card-title mb-4">Frage</h5>
 
                 <div onclick="answer('answer-1')" class="card answer border-0 border-radius2 mb-3">
