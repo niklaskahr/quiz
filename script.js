@@ -40,7 +40,7 @@ let questions = [
     {
         'question': 'Welches HTML-Element gibt es nicht?',
         'answer1': '&lt;img&gt;',
-        'answer2': '&lt;a&gt;',
+        'answer2': '&lt;canvas&gt;',
         'answer3': '&lt;di<b>√</b>&gt;',
         'answer4': '&lt;span&gt;',
         'rightAnswer': 3
@@ -75,8 +75,7 @@ function init() {
 function showProgress() {
     let progressinPercent = (currentQuestion / questions.length) * 100;
     document.getElementById('progress-bar').style.width = `${progressinPercent}%`;
-    //document.getElementById('progress-bar').innerHTML = progressinPercent;
-
+    
     if (progressinPercent == 100) {
         document.getElementById('progress-bar').style.borderRadius = 0;
     }
@@ -157,7 +156,7 @@ function resetAnswers() {
 
 
 function resetAnswers3And4() {
-    if (question.answer3 && question.answer4 !== undefined) {
+    if (question.answer3 !== undefined && question.answer4 !== undefined) {
         document.getElementById('answer-3').classList.add('bg-white_');
         document.getElementById('answer-3').parentNode.classList.remove('bg-correct', 'bg-incorrect');
         document.getElementById('answer-3-letter').classList.remove('bg-correct2', 'bg-incorrect2');
@@ -170,50 +169,32 @@ function resetAnswers3And4() {
 
 
 function renderQuestion() {
+    question = questions[currentQuestion];
+
     document.getElementById('question-text').innerHTML = question['question'];
     document.getElementById('question-counter').innerHTML = 1 + currentQuestion;
 
     document.getElementById('answer-1').innerHTML = question['answer1'];
     document.getElementById('answer-2').innerHTML = question['answer2'];
+    document.getElementById('answer-3').innerHTML = question['answer3'];
+    document.getElementById('answer-4').innerHTML = question['answer4'];
 
     checkAnswersUndefined();
 }
 
 function checkAnswersUndefined() {
     if (question['answer3'] == undefined) {
-        document.getElementById('answer-3').remove();
-    } else {
-        renderAnswer3();
+        document.getElementById('answer-3-container').classList.add('d-none');
+    } else if (document.getElementById('answer-3-container').classList.contains('d-none')) {
+        document.getElementById('answer-3-container').classList.remove('d-none');
     }
+
     if (question['answer4'] == undefined) {
-        document.getElementById('answer-4').remove();
-    } else {
-        renderAnswer4();
+        document.getElementById('answer-4-container').classList.add('d-none');
+    } else if (document.getElementById('answer-4-container').classList.contains('d-none')) {
+        document.getElementById('answer-4-container').classList.remove('d-none');
     }
 }
-
-
-function renderAnswer3() {
-    document.getElementById('answer-3-container').innerHTML =
-    `<div class="card-sub bg-white_ ps-2 py-2">
-        <div id="answer-3-letter" class="letter-container">
-        <span class="bold">C</span>
-        </div>
-        <span id="answer-3" class="ps-45">${question['answer3']}</span>
-    </div>`;
-}
-
-
-function renderAnswer4() {
-    document.getElementById('answer-4-container').innerHTML =
-    `<div class="card-sub bg-white_ ps-2 py-2">
-        <div id="answer-4-letter" class="letter-container">
-            <span class="bold">D</span>
-        </div>
-        <span id="answer-4" class="ps-45">${question['answer4']}</span>
-    </div>`;
-}
-
 
 
 function showResult() {
