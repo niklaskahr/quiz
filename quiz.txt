@@ -1,0 +1,5 @@
+Hover-Effekte bei Answers, Buttons und Options fixen
+Zoom fixen
+Responsive machen
+Menü + Replay: Underline-Effekt?
+Zurück/Weiter-Buttons statt nur Weiter (Mockup)
